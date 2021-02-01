@@ -232,7 +232,7 @@ mixin _CornerAndClipKeyMixin on AssetBundleImageKey {
   int get cornerRadius;
   //cornerRadius圆角外围部分的颜色
   Color get cornerColor;
-  //缓存图片的大小
+  //ImageCache缓存图片的宽高设置
   int get cacheImageWidth;
   int get cacheImageHeight;
 
@@ -240,7 +240,7 @@ mixin _CornerAndClipKeyMixin on AssetBundleImageKey {
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   ClipLocation get clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   Size get imageShowSize;
 
   @override
@@ -266,7 +266,7 @@ mixin _CornerAndClipProviderMixin<T> on ImageProvider<T> {
   int get cornerRadius;
   //cornerRadius圆角外围部分的颜色
   Color get cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   int get cacheImageWidth;
   int get cacheImageHeight;
 
@@ -274,7 +274,7 @@ mixin _CornerAndClipProviderMixin<T> on ImageProvider<T> {
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   ClipLocation get clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   Size get imageShowSize;
 
   @override
@@ -494,7 +494,7 @@ class RoundCornersExactAssetImage extends ExactAssetImage with _CornerAndClipPro
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -502,7 +502,7 @@ class RoundCornersExactAssetImage extends ExactAssetImage with _CornerAndClipPro
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const RoundCornersExactAssetImage(
@@ -544,7 +544,7 @@ class RoundCornersAssetImage extends AssetImage with _CornerAndClipProviderMixin
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -552,7 +552,7 @@ class RoundCornersAssetImage extends AssetImage with _CornerAndClipProviderMixin
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const RoundCornersAssetImage(
@@ -593,7 +593,7 @@ class _WithCornerAssetBundleImageKey extends AssetBundleImageKey with _CornerAnd
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -601,7 +601,7 @@ class _WithCornerAssetBundleImageKey extends AssetBundleImageKey with _CornerAnd
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const _WithCornerAssetBundleImageKey({
@@ -625,7 +625,7 @@ class RoundCornersFileImage extends FileImage with _CornerAndClipProviderMixin {
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -633,7 +633,7 @@ class RoundCornersFileImage extends FileImage with _CornerAndClipProviderMixin {
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const RoundCornersFileImage(
@@ -656,7 +656,7 @@ class RoundCornersMemoryImage extends MemoryImage with _CornerAndClipProviderMix
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -664,7 +664,7 @@ class RoundCornersMemoryImage extends MemoryImage with _CornerAndClipProviderMix
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const RoundCornersMemoryImage(
@@ -687,7 +687,7 @@ class RoundCornersNetworkImage extends network_image.NetworkImage with _CornerAn
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -695,7 +695,7 @@ class RoundCornersNetworkImage extends network_image.NetworkImage with _CornerAn
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
 
   const RoundCornersNetworkImage(
@@ -719,7 +719,7 @@ class RoundCornerCachedNetworkImage extends CachedNetworkImage.CachedNetworkImag
   final int cornerRadius;
   //cornerRadius圆角外围部分的颜色
   final Color cornerColor;
-  //图片显示的大小，如果设置了图片显示宽高，会按图片显示宽高比截取原图
+  //ImageCache缓存图片的宽高设置
   final int cacheImageWidth;
   final int cacheImageHeight;
 
@@ -727,7 +727,7 @@ class RoundCornerCachedNetworkImage extends CachedNetworkImage.CachedNetworkImag
   //如果设置ClipLocation.Start，则当原始图片过长的时候从头部(上或左)截取宽高比为imageShowSize框高比的图片。
   final ClipLocation clipLocation;
 
-  //显示出来的图片大小
+  //图片显示的大小。如果设置了图片显示宽高，会按图片显示宽高比截取原图。圆角也会匹配imageShowSize
   final Size imageShowSize;
   RoundCornerCachedNetworkImage(
     String url, {

@@ -1,8 +1,7 @@
 name: round_corners_image_provider
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/LBXjixiangniao/round_corners_image_provider
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
