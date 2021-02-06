@@ -7,6 +7,7 @@ import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // ignore: implementation_imports
@@ -19,3 +20,4 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 part 'isolate.dart';
 part 'image_provider.dart';
+part 'frame_order_image_provider.dart';

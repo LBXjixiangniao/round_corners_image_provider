@@ -18,11 +18,9 @@ class _RoundedImagePageState extends State<RoundedImagePage> {
       children: [
         for (var i = 0; i < 60; i++)
           Image(
-            image: RoundCornersImageProvider.asset(
-              'assets/icon_round_corners.png',
-              cornerRadius: 30,
-              imageShowSize: Size(60, 60),
-              cornerColor: Colors.yellow
+            image: FrameOrderImage(
+              RoundCornersImageProvider.asset('assets/icon_round_corners.png',
+                  cornerRadius: 30, imageShowSize: Size(60, 60), cornerColor: Colors.yellow),
             ),
             width: 60,
             height: 60,
